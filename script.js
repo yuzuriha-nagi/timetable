@@ -29,14 +29,14 @@ timeSlots.forEach((slot, rowIndex) => {
     const storedName = localStorage.getItem(NameId);
     NameCell.textContent = storedName !== null ? storedName : defaultData[rowIndex].Name;
 
-    HNCell.addEventListener("click", () => {
-    const newValue = prompt(`${slot.start} 登壇者名を入力:`, HNCell.textContent);
+    NameCell.addEventListener("click", () => {
+    const newValue = prompt(`${slot.start} 登壇者名を入力:`, NameCell.textContent);
     if (newValue !== null) {
-        HNCell.textContent = newValue;
-        localStorage.setItem(HNId, newValue);
+        NameCell.textContent = newValue;
+        localStorage.setItem(NameId, newValue);
     }
     });
-    row.appendChild(HNCell);
+    row.appendChild(NameCell);
   // 登壇者名//
 
     const themeCell = document.createElement("td");
